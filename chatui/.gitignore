@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+[submodule "chatbot"]
+	path = chatbot
+	url = https://github.com/afreen-jh/chatbot.git
