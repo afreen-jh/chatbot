@@ -1,0 +1,296 @@
+/* Import Google's premium typography scale */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base Fullscreen Engine */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #080c14; /* Deep premium canvas */
+  color: #f1f5f9;
+}
+
+/* ==========================================
+   THE BRAND NEW SIDEBAR LOOK
+   ========================================== */
+.app-sidebar {
+  width: 260px;
+  background-color: #0d121f; /* Clean contrasting dark tone */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Brand Section */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px 12px 8px;
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #6366f1; /* Premium Indigo */
+  border-radius: 50%;
+  box-shadow: 0 0 12px #6366f1;
+}
+
+.brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* Premium Dynamic Action Controller */
+.create-space-btn {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.create-space-btn:hover {
+  background-color: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.btn-plus-icon {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Workspace History Grid Section */
+.workspace-history {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.history-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569; /* Balanced secondary text */
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+.history-scroll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  flex: 1;
+}
+/* ==========================================
+   WORKSPACE TEXT FORMATTING ENGINE
+   ========================================== */
+.formatted-workspace-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Generous vertical gap between paragraph breaks */
+}
+
+.workspace-paragraph {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #cbd5e1; /* Smooth low-strain text gray */
+  font-weight: 400;
+}
+
+/* Custom bullet list layouts */
+.workspace-bullet-line {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding-left: 8px;
+  margin-top: 2px;
+}
+
+.bullet-dot {
+  color: #10b981; /* Matches the green workspace accent color */
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.bullet-text {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  flex: 1;
+}
+
+/* Image scaling in full chat history area */
+.chat-feed-img {
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sleek History List Item */
+.workspace-row-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.row-item-status-indicator {
+  width: 4px;
+  height: 4px;
+  background-color: #475569;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.row-item-text {
+  font-size: 0.88rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover States */
+.workspace-row-item:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #f1f5f9;
+}
+
+.workspace-row-item:hover .row-item-status-indicator {
+  background-color: #94a3b8;
+}
+
+/* Active Workspace Item Style */
+.workspace-row-item.is-active {
+  background-color: rgba(99, 102, 241, 0.08); /* Transparent Indigo backing */
+  color: #818cf8; /* Vibrant Indigo font text styling */
+}
+
+.workspace-row-item.is-active .row-item-status-indicator {
+  background-color: #818cf8;
+  transform: scale(1.5);
+}
+
+/* Custom scrollbar to keep it clean */
+.history-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+.history-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+/* ==========================================
+   REST OF MAIN WINDOW WRAPPERS
+   ========================================== */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.chat-header {
+  padding: 24px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.chat-header h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.messages-container {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.message-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.sender-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.user-row .sender-tag { color: #818cf8; }
+.bot-row .sender-tag { color: #10b981; }
+.message-bubble p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+.typing-bar-container {
+  display: flex;
+  gap: 12px;
+  padding: 24px 40px;
+  max-width: 840px;
+  width: 100%;
+  margin: 0 auto;
+}
+.typing-input {
+  flex: 1;
+  background-color: #0d121f;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #ffffff;
+  outline: none;
+}
+.send-btn {
+  background: #1e293b;
+  color: #94a3b8;
+  border: none;
+  padding: 0 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.chat-feed-img {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
