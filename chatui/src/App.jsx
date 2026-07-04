@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import ChatWindow from './components/ChatWindow';
-import { GoogleGenAI } from '@google/generative-ai'; // Or your exact import path for GoogleGenAI
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import './App.css';
 
 // Initialize your API client using Vite environment variables safely
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+const ai = new GoogleGenerativeAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 function App() {
